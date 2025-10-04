@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Devenir ingénieur – ISEN Ouest</title>
+
+  <!-- ====== Styles du HEADER et FOOTER ====== -->
+  <style>
+    html { font-family: Open Sans, sans-serif; }
+
+    /* HEADER */
+    .header-isen { background:#fff; border-bottom:1px solid #e5e5e5; }
+    .header-container {
+      max-width:1400px; margin:0 auto; padding:0 20px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .header-logo img { height:45px; width:auto; }
+    .header-nav { background:#e30613; flex:1; margin-left:40px; }
+    .header-nav ul { list-style:none; display:flex; justify-content:space-around; margin:0; padding:0; }
+    .header-nav li { flex:1; text-align:center; }
+    .header-nav a {
+      display:block; padding:14px 10px;
+      font-size:1.2em; font-weight:bold; color:#fff;
+      text-decoration:none; transition:background .2s;
+    }
+    .header-nav a:hover { text-decoration:underline; }
+
+    /* CONTENU PRINCIPAL */
+    :root {
+      --text:#0f172a;
+      --muted:#374151;
+      --container:1200px;
+    }
+
+    body {
+      color:var(--text);
+      background:#fff;
+      line-height:1.65;
+      margin:0;
+    }
+
+    .container {
+      max-width:var(--container);
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    h1 {
+      font-size:clamp(32px,4vw,44px);
+      margin:28px 0 22px;
+      letter-spacing:-.4px;
+    }
+
+    .page-grid {
+      display:grid;
+      grid-template-columns: 1fr 520px; /* texte / diagramme */
+      gap:40px;
+      align-items:start;
+    }
+
+    .lead p {
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    .diagram {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .diagram img {
+      max-width:520px;
+      width:100%;
+      height:auto;
+      display:block;
+      border:0;
+    }
+
+    @media (max-width:980px){
+      .page-grid {
+        grid-template-columns:1fr;
+        gap:28px;
+      }
+      .diagram { order:2; }
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background:#000;
+      color:#fff;
+      padding:40px 20px 20px;
+    }
+    .footer-container {
+      display:flex;
+      max-width:1200px;
+      margin:0 auto;
+      gap:40px;
+      flex-wrap:wrap;
+    }
+    .footer-col-logo {
+      flex:1;
+      min-width:220px;
+      display:flex;
+      flex-direction:column;
+    }
+    .footer-logo {
+      height:100px;
+      margin-bottom:15px;
+      margin-top:30px;
+    }
+    .footer-links-section {
+      flex:3;
+      display:flex;
+      flex-direction:column;
+    }
+    .footer-cities {
+      font-size:40px;
+      font-weight:700;
+      text-align:left;
+      margin-bottom:20px;
+    }
+    .footer-bottom {
+      text-align:center;
+      padding-top:15px;
+      background:#fff;
+      color:#000;
+      font-size:14px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ====== HEADER ====== -->
+  <header class="header-isen">
+    <div class="header-container">
+      <a href="/" class="header-logo">
+        <img src="https://isen-ouest.fr/wp-content/uploads/2024/07/15/logo-isen-couleur.png" alt="ISEN Ouest">
+      </a>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="#">Liens à venir</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== CONTENU ====== -->
+  <main class="container">
+    <h1>Devenir ingénieur</h1>
+
+    <div class="page-grid">
+      <!-- Colonne texte -->
+      <section class="lead">
+        <p>Parce que les technologies et l’IA sont partout, l’ISEN Ouest forme des ingénieurs aptes à répondre aux besoins des entreprises dans tous les secteurs d’activités.</p>
+
+        <p>Après le baccalauréat, vous optez pour un cycle de formation en 3 ans centré sur les sciences appliquées, le numérique et l’IA. En fonction de votre profil, sept cursus différents sont proposés. Pendant ces trois premières années, vous réfléchissez à votre projet professionnel et vous pouvez changer de cursus.</p>
+
+        <p>Ensuite, vous accédez sans critère de classement aux domaines professionnels proposés par l’ISEN Ouest. C’est le temps de la spécialisation.</p>
+
+        <p>La formation d’ingénieur généraliste ne se limite pas aux matières techniques ou scientifiques. Les élèves-ingénieurs apprennent à communiquer, à manager, à prendre de la hauteur sur leurs activités et surtout, comme personne ne connaît les technologies de demain, ils apprennent à apprendre.</p>
+      </section>
+
+      <!-- Colonne image locale -->
+      <aside class="diagram">
+        <!-- L’image doit être dans le même dossier que ce fichier -->
+        <img src="diagramme.jpg" alt="Diagramme ISEN Ouest">
+      </aside>
+    </div>
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col footer-col-logo">
+        <img src="https://isen-ouest.fr/wp-content/uploads/2024/07/15/logo-isen-blanc.svg" alt="ISEN Ouest" class="footer-logo">
+      </div>
+
+      <div class="footer-links-section">
+        <p class="footer-cities">Texte à venir</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">&copy;</div>
+</body>
+</html>
