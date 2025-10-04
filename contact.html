@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contactez-nous</title>
+
+  <style>
+    /* ===============================
+       STYLES INTERNES (HTML + CSS)
+    =============================== */
+    :root{
+      --bg:#fafafa;
+      --card:#fff;
+      --border:#e5e7eb;
+      --text:#0f172a;
+      --muted:#64748b;
+      --primary:#c00; /* bouton rouge comme la capture */
+      --radius:14px;
+      --shadow:0 8px 20px rgba(0,0,0,.08);
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.5;
+    }
+
+    .page{
+      max-width: 820px;
+      margin: 32px auto 80px;
+      padding: 0 16px;
+    }
+
+    h1{
+      font-size: clamp(28px, 3.2vw, 36px);
+      margin: 0 0 8px;
+    }
+    .subtitle{margin:0 0 20px;color:var(--muted)}
+
+    .note{
+      background:#fff1f2;
+      border:1px solid #ffe4e6;
+      color:#7f1d1d;
+      padding:14px 16px;
+      border-radius:10px;
+      margin: 16px 0 24px;
+    }
+    .note .quote{font-weight:600}
+
+    .form{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:24px;
+    }
+
+    .form__group{margin-bottom:18px}
+    .form__group label,
+    fieldset legend{
+      display:block;
+      font-weight:600;
+      margin-bottom:8px;
+    }
+    label span[aria-hidden="true"]{color:#dc2626}
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea{
+      width:100%;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:10px;
+      padding:12px 14px;
+      font-size:16px;
+      outline:none;
+      transition:border-color .2s, box-shadow .2s;
+    }
+    textarea{resize:vertical; min-height:140px}
+
+    input:focus, select:focus, textarea:focus{
+      border-color:#94a3b8;
+      box-shadow:0 0 0 4px rgba(148,163,184,.25);
+    }
+
+    /* Radios & checkboxes */
+    fieldset{border:0;padding:0;margin:0}
+    .radio, .checkbox{display:flex;align-items:center;gap:10px;margin-right:18px}
+    .radio input, .checkbox input{width:18px;height:18px}
+    fieldset .radio{display:inline-flex}
+
+    .check-wrap{margin-top:-6px}
+
+    /* Grid helpers */
+    .grid{display:grid;gap:16px}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width: 640px){
+      .grid-2{grid-template-columns:1fr}
+    }
+
+    /* Errors */
+    .error{display:none;color:#b91c1c;font-size:.9rem;margin-top:6px}
+
+    /* Actions */
+    .actions{margin-top:8px}
+    .btn{
+      appearance:none;
+      border:0;
+      background:var(--primary);
+      color:#fff;
+      font-weight:700;
+      padding:12px 22px;
+      border-radius:10px;
+      cursor:pointer;
+    }
+    .btn:hover{filter:brightness(.95)}
+    .btn:active{transform:translateY(1px)}
+
+    .disclaimer{
+      color:var(--muted);
+      font-size:.9rem;
+      margin-top:16px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <h1>Contactez-nous</h1>
+    <p class="subtitle">Remplissez le formulaire ci-dessous pour nous envoyer votre demande.</p>
+
+    <div class="note">
+      <span class="quote">« * »</span> indique les champs nécessaires
+    </div>
+
+    <form class="form" action="#" method="post" novalidate>
+      <!-- Vous êtes ? -->
+      <div class="form__group">
+        <label for="profil">Vous êtes ? <span aria-hidden="true">*</span></label>
+        <select id="profil" name="profil" required>
+          <option value="" selected disabled>Sélectionnez votre profil</option>
+          <option>Étudiant</option>
+          <option>Parent</option>
+          <option>Entreprise</option>
+          <option>Autre</option>
+        </select>
+      </div>
+
+      <!-- Société -->
+      <div class="form__group">
+        <label for="societe">Société</label>
+        <input id="societe" name="societe" type="text" placeholder="Nom de la société" />
+      </div>
+
+      <!-- Civilité -->
+      <fieldset class="form__group">
+        <legend>Civilité <span aria-hidden="true">*</span></legend>
+        <label class="radio"><input type="radio" name="civilite" value="madame" required /> <span>Madame</span></label>
+        <label class="radio"><input type="radio" name="civilite" value="monsieur" required /> <span>Monsieur</span></label>
+        <label class="radio"><input type="radio" name="civilite" value="autre" required /> <span>Autre</span></label>
+      </fieldset>
+
+      <!-- Prénom / Nom -->
+      <div class="grid grid-2">
+        <div class="form__group">
+          <label for="prenom">Prénom <span aria-hidden="true">*</span></label>
+          <input id="prenom" name="prenom" type="text" placeholder="Prénom" required />
+        </div>
+        <div class="form__group">
+          <label for="nom">Nom <span aria-hidden="true">*</span></label>
+          <input id="nom" name="nom" type="text" placeholder="Nom" required />
+        </div>
+      </div>
+
+      <!-- Email / Confirmez -->
+      <div class="grid grid-2">
+        <div class="form__group">
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" placeholder="Saisissez un e-mail" required />
+        </div>
+        <div class="form__group">
+          <label for="email2">Confirmez l’e-mail <span aria-hidden="true">*</span></label>
+          <input id="email2" name="email2" type="email" placeholder="Confirmez l’e-mail" required />
+        </div>
+      </div>
+
+      <!-- Téléphone -->
+      <div class="form__group">
+        <label for="tel">Téléphone <span aria-hidden="true">*</span></label>
+        <input id="tel" name="tel" type="tel" placeholder="+33 6 12 34 56 78" required />
+      </div>
+
+      <!-- Objet -->
+      <div class="form__group">
+        <label for="objet">Objet <span aria-hidden="true">*</span></label>
+        <select id="objet" name="objet" required>
+          <option value="" selected disabled>Sélectionnez l’objet de votre demande</option>
+          <option>Informations générales</option>
+          <option>Admission</option>
+          <option>Entreprise / Partenariat</option>
+          <option>Autre</option>
+        </select>
+      </div>
+
+      <!-- Message -->
+      <div class="form__group">
+        <label for="message">Message <span aria-hidden="true">*</span></label>
+        <textarea id="message" name="message" rows="6" placeholder="Votre message..." required></textarea>
+      </div>
+
+      <!-- Consentements -->
+      <div class="form__group check-wrap">
+        <label class="checkbox">
+          <input type="checkbox" name="optin" />
+          <span>J’accepte de recevoir des informations de la part de ISEN Ouest.</span>
+        </label>
+      </div>
+
+      <div class="form__group check-wrap">
+        <label class="checkbox">
+          <input type="checkbox" name="rgpd" required />
+          <span>J’accepte la <a href="#" target="_blank" rel="noopener">politique de confidentialité</a>.</span>
+        </label>
+      </div>
+
+      <!-- Submit -->
+      <div class="actions">
+        <button type="submit" class="btn">Envoyer</button>
+      </div>
+
+      <p class="disclaimer">
+        Nous traitons les données recueillies pour répondre à votre demande. Pour en savoir plus sur la gestion de vos
+        données personnelles et pour exercer vos droits, reportez-vous à la politique de confidentialité.
+      </p>
+    </form>
+  </main>
+
+  <script>
+    // Vérifie que les deux e-mails sont identiques avant envoi
+    document.querySelector('.form').addEventListener('submit', function (e) {
+      const email = document.getElementById('email');
+      const email2 = document.getElementById('email2');
+      if (email.value && email2.value && email.value !== email2.value) {
+        e.preventDefault();
+        alert('Les e-mails ne correspondent pas.');
+      }
+    });
+  </script>
+</body>
+</html>
+
