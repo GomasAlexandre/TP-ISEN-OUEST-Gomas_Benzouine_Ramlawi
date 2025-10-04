@@ -5,134 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Devenir ingénieur – ISEN Ouest</title>
 
-  <!-- ====== Styles du HEADER et FOOTER ====== -->
+  <!-- ====== BASE ====== -->
   <style>
-    html { font-family: Open Sans, sans-serif; }
+    *{box-sizing:border-box}
+    html{font-family: Open Sans, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+    body{margin:0; color:#0f172a; background:#fff; line-height:1.65}
+    a{color:inherit}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+  </style>
 
-    /* HEADER */
-    .header-isen { background:#fff; border-bottom:1px solid #e5e5e5; }
-    .header-container {
-      max-width:1400px; margin:0 auto; padding:0 20px;
-      display:flex; align-items:center; justify-content:space-between;
-    }
-    .header-logo img { height:45px; width:auto; }
-    .header-nav { background:#e30613; flex:1; margin-left:40px; }
-    .header-nav ul { list-style:none; display:flex; justify-content:space-around; margin:0; padding:0; }
-    .header-nav li { flex:1; text-align:center; }
-    .header-nav a {
-      display:block; padding:14px 10px;
-      font-size:1.2em; font-weight:bold; color:#fff;
-      text-decoration:none; transition:background .2s;
-    }
-    .header-nav a:hover { text-decoration:underline; }
-
-    /* CONTENU PRINCIPAL */
-    :root {
-      --text:#0f172a;
-      --muted:#374151;
-      --container:1200px;
-    }
-
-    body {
-      color:var(--text);
-      background:#fff;
-      line-height:1.65;
-      margin:0;
-    }
-
-    .container {
-      max-width:var(--container);
-      margin:0 auto;
-      padding:0 24px;
-    }
-
-    h1 {
-      font-size:clamp(32px,4vw,44px);
-      margin:28px 0 22px;
-      letter-spacing:-.4px;
-    }
-
-    .page-grid {
-      display:grid;
-      grid-template-columns: 1fr 520px; /* texte / diagramme */
-      gap:40px;
-      align-items:start;
-    }
-
-    .lead p {
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:18px;
-    }
-
-    .diagram {
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .diagram img {
-      max-width:520px;
-      width:100%;
-      height:auto;
-      display:block;
-      border:0;
-    }
-
-    @media (max-width:980px){
-      .page-grid {
-        grid-template-columns:1fr;
-        gap:28px;
-      }
-      .diagram { order:2; }
-    }
-
-    /* FOOTER */
-    .site-footer {
-      background:#000;
-      color:#fff;
-      padding:40px 20px 20px;
-    }
-    .footer-container {
-      display:flex;
-      max-width:1200px;
-      margin:0 auto;
-      gap:40px;
-      flex-wrap:wrap;
-    }
-    .footer-col-logo {
-      flex:1;
-      min-width:220px;
-      display:flex;
-      flex-direction:column;
-    }
-    .footer-logo {
-      height:100px;
-      margin-bottom:15px;
-      margin-top:30px;
-    }
-    .footer-links-section {
-      flex:3;
-      display:flex;
-      flex-direction:column;
-    }
-    .footer-cities {
-      font-size:40px;
-      font-weight:700;
-      text-align:left;
-      margin-bottom:20px;
-    }
-    .footer-bottom {
-      text-align:center;
-      padding-top:15px;
-      background:#fff;
-      color:#000;
-      font-size:14px;
+  <!-- ====== HEADER (identique à tes autres pages) ====== -->
+  <style>
+    .header-isen{background:#fff;border-bottom:1px solid #e5e5e5}
+    .header-container{max-width:1400px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+    .header-logo img{height:45px;width:auto}
+    .header-nav{background:#e30613;flex:1;margin-left:40px;border-radius:4px}
+    .header-nav ul{list-style:none;display:flex;justify-content:space-around;margin:0;padding:0}
+    .header-nav li{flex:1;text-align:center}
+    .header-nav a{display:block;padding:12px 10px;font-size:1.05rem;font-weight:700;color:#fff;text-decoration:none}
+    .header-nav a:hover{text-decoration:underline}
+    @media (max-width:900px){
+      .header-container{flex-wrap:wrap;gap:10px}
+      .header-nav{margin-left:0;width:100%}
     }
   </style>
-</head>
 
+  <!-- ====== BREADCRUMB ====== -->
+  <style>
+    .breadcrumb{background:#fff}
+    .breadcrumb-container{max-width:1200px;margin:0 auto;padding:18px 24px 8px;display:flex;align-items:center}
+    .breadcrumb-content{display:flex;align-items:center;font-size:.98rem}
+    .breadcrumb a{text-decoration:none;color:#000}
+    .breadcrumb a:hover{text-decoration:underline}
+    .breadcrumb .separator{margin:0 8px;color:#999}
+    .breadcrumb-line{flex:1;height:3px;background:#e30613;margin-left:16px;border-radius:2px}
+  </style>
+
+  <!-- ====== SECTION INTRO (texte + image) ====== -->
+  <style>
+    h1{font-size:clamp(28px,4vw,36px);margin:8px 0 18px}
+    .intro{display:grid;grid-template-columns:1fr 520px;gap:40px;align-items:start;margin-bottom:24px}
+    .intro p{margin:0 0 16px;color:#374151}
+    .intro .diagram{display:flex;justify-content:center;align-items:center}
+    .intro .diagram img{max-width:520px;width:100%;height:auto;display:block}
+    @media (max-width:980px){.intro{grid-template-columns:1fr;gap:24px}.intro .diagram{order:2}}
+  </style>
+
+  <!-- ====== CARTES (2 colonnes) ====== -->
+  <style>
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin:28px 0 48px}
+    .card{
+      background:#fff;border:1.5px solid #e5e7eb;border-radius:12px;
+      box-shadow:0 8px 18px rgba(0,0,0,.06); overflow:hidden;
+    }
+    .card img{width:100%;height:auto;display:block}
+    .card-body{padding:16px 18px 20px}
+    .card h3{margin:0 0 10px;font-size:1.2rem}
+    .card p{margin:0 0 14px;color:#374151}
+    .cta{
+      display:inline-block;background:#e30613;color:#fff;
+      padding:10px 16px;border-radius:999px;font-weight:700;text-decoration:none;
+    }
+    .cta:hover{filter:brightness(.95)}
+    @media (max-width:900px){.cards{grid-template-columns:1fr}}
+  </style>
+
+  <!-- ====== FOOTER (identique à tes autres pages) ====== -->
+  <style>
+    .site-footer{background:#000;color:#fff;padding:42px 20px 16px}
+    .footer-container{display:flex;max-width:1200px;margin:0 auto;gap:40px;flex-wrap:wrap}
+    .footer-col-logo{flex:1;min-width:220px;display:flex;flex-direction:column}
+    .footer-logo{height:88px;margin:6px 0 10px}
+    .btn-contact{display:inline-block;padding:10px 20px;background:#c8102e;color:#fff;font-weight:600;text-decoration:none;border-radius:25px;margin-top:8px}
+    .btn-contact:hover{background:#a00b23}
+    .footer-links-section{flex:3;display:flex;flex-direction:column}
+    .footer-cities{font-size:28px;font-weight:800;text-align:center;margin:8px 0 18px}
+    .footer-links-container{display:flex;gap:40px;flex-wrap:wrap;justify-content:center}
+    .footer-col{min-width:220px}
+    .footer-col h3{font-size:16px;font-weight:800;margin-bottom:12px}
+    .footer-col ul{list-style:none;padding:0;margin:0}
+    .footer-col li{margin-bottom:8px}
+    .footer-col a{color:#fff;text-decoration:none;font-size:14px}
+    .footer-col a:hover{text-decoration:underline}
+    .footer-bottom{text-align:center;padding:10px 0;background:#fff;color:#000;font-size:14px}
+    @media(max-width:900px){.footer-cies{font-size:22px}.footer-links-container{gap:20px}}
+  </style>
+</head>
 <body>
+
   <!-- ====== HEADER ====== -->
   <header class="header-isen">
     <div class="header-container">
@@ -141,49 +101,115 @@
       </a>
       <nav class="header-nav">
         <ul>
-          <li><a href="#">Liens à venir</a></li>
+          <li><a href="devenir_ing.html">Devenir ingénieur</a></li>
+          <li><a href="formations.html">Formations</a></li>
+          <li><a href="postbac.html">Cycle Post-bac</a></li>
+          <li><a href="ACOMPLETER">Apprentissage</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- ====== BREADCRUMB ====== -->
+  <nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <div class="breadcrumb-container">
+      <div class="breadcrumb-content">
+        <a href="index.html">Accueil</a>
+        <span class="separator">›</span>
+        <a href="#">Devenir ingénieur</a>
+        <span class="separator">›</span>
+      </div>
+      <div class="breadcrumb-line" aria-hidden="true"></div>
+    </div>
+  </nav>
+
   <!-- ====== CONTENU ====== -->
   <main class="container">
     <h1>Devenir ingénieur</h1>
 
-    <div class="page-grid">
-      <!-- Colonne texte -->
-      <section class="lead">
+    <!-- Intro : texte + image locale -->
+    <section class="intro">
+      <div>
         <p>Parce que les technologies et l’IA sont partout, l’ISEN Ouest forme des ingénieurs aptes à répondre aux besoins des entreprises dans tous les secteurs d’activités.</p>
-
         <p>Après le baccalauréat, vous optez pour un cycle de formation en 3 ans centré sur les sciences appliquées, le numérique et l’IA. En fonction de votre profil, sept cursus différents sont proposés. Pendant ces trois premières années, vous réfléchissez à votre projet professionnel et vous pouvez changer de cursus.</p>
-
         <p>Ensuite, vous accédez sans critère de classement aux domaines professionnels proposés par l’ISEN Ouest. C’est le temps de la spécialisation.</p>
-
         <p>La formation d’ingénieur généraliste ne se limite pas aux matières techniques ou scientifiques. Les élèves-ingénieurs apprennent à communiquer, à manager, à prendre de la hauteur sur leurs activités et surtout, comme personne ne connaît les technologies de demain, ils apprennent à apprendre.</p>
-      </section>
-
-      <!-- Colonne image locale -->
-      <aside class="diagram">
-        <!-- L’image doit être dans le même dossier que ce fichier -->
+      </div>
+      <div class="diagram">
+        <!-- l’image doit être dans le même dossier que ce fichier -->
         <img src="diagramme.jpg" alt="Diagramme ISEN Ouest">
-      </aside>
-    </div>
+      </div>
+    </section>
+
+    <!-- Cartes -->
+    <section class="cards">
+      <!-- Carte 1 -->
+      <article class="card">
+        <img src="image2.jpg" alt="Statut étudiant">
+        <div class="card-body">
+          <h3>Devenir ingénieur sous statut étudiant</h3>
+          <p>Le cycle ingénieur sous statut étudiant offre une formation complète, alliant cours théoriques, travaux pratiques et projets en équipe. Les étudiants bénéficient d’une progression structurée avec des stages en entreprise pour développer les compétences acquises dans leurs enseignements.</p>
+          <a class="cta" href="ACOMPLETER">Formation d’ingénieurs sous statut étudiant</a>
+        </div>
+      </article>
+
+      <!-- Carte 2 -->
+      <article class="card">
+        <img src="image1.jpg" alt="Statut apprenti">
+        <div class="card-body">
+          <h3>Devenir ingénieur par alternance</h3>
+          <p>Le cycle ingénieur en apprentissage permet d’alterner les périodes à l’école et en entreprise afin de monter progressivement en compétence. Cette voie favorise une immersion professionnelle rapide tout en étant rémunéré pendant toute la durée du contrat.</p>
+          <a class="cta" href="ACOMPLETER">Formation d’ingénieurs sous statut apprenti</a>
+        </div>
+      </article>
+    </section>
   </main>
 
   <!-- ====== FOOTER ====== -->
   <footer class="site-footer">
     <div class="footer-container">
-      <div class="footer-col footer-col-logo">
-        <img src="https://isen-ouest.fr/wp-content/uploads/2024/07/15/logo-isen-blanc.svg" alt="ISEN Ouest" class="footer-logo">
+      <div class="footer-col-logo">
+        <img class="footer-logo" src="https://isen-ouest.fr/wp-content/uploads/2024/07/15/logo-isen-blanc.svg" alt="ISEN Ouest">
+        <a href="contact.html" class="btn-contact">Nous contacter</a>
       </div>
 
       <div class="footer-links-section">
-        <p class="footer-cities">Texte à venir</p>
+        <p class="footer-cities">Brest - Caen - Nantes - Paris - Rennes</p>
+
+        <div class="footer-links-container">
+          <div class="footer-col">
+            <h3>Devenir ingénieur</h3>
+            <ul>
+              <li><a href="ACOMPLETER">Cycle post-bac</a></li>
+              <li><a href="ACOMPLETER">Formation d'ingénieur</a></li>
+              <li><a href="ACOMPLETER">Apprentissage</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Entreprises</h3>
+            <ul>
+              <li><a href="https://isen-ouest.fr/entreprises/recruter/">Recruter un étudiant</a></li>
+              <li><a href="https://isen-ouest.fr/labisen-la-recherche/la-recherche-partenariale/">Recherche partenariale</a></li>
+              <li><a href="http://isen-ouest.fr/taxe-d-apprentissage">Taxe d'apprentissage</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Étudiants</h3>
+            <ul>
+              <li><a href="https://isen-ouest.fr/infos-pratiques/">Informations pratiques</a></li>
+              <li><a href="http://isen-ouest.fr/sportifs">Sportifs</a></li>
+              <li><a href="http://isen-ouest.fr/alumni-aiisen">Alumni AIISEN</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
+
     </div>
   </footer>
+  <div class="footer-bottom">©️ 2025 ISEN Ouest – Tous droits réservés.</div>
 
-  <div class="footer-bottom">&copy;</div>
 </body>
 </html>
