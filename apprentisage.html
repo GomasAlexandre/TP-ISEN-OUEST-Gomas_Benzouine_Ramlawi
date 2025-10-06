@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cycle Ingénieur par l’apprentissage – ISEN Ouest</title>
+  <meta name="description" content="Présentation du cycle ingénieur par l’apprentissage : alternance école/entreprise, rythme et montée en compétences." />
+
+  <!-- Styles simples, modernes et responsives -->
+  <style>
+    :root {
+      --bg: #0f172a;        /* slate-900 */
+      --card: #0b1226;      /* slate-950-ish */
+      --muted: #94a3b8;     /* slate-400 */
+      --text: #e2e8f0;      /* slate-200 */
+      --brand: #22d3ee;     /* cyan-400 */
+      --accent: #38bdf8;    /* sky-400 */
+      --ring: #22d3ee55;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 20% -10%, #0b2a3a 0%, transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, #13223c 0%, transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(1100px, 92vw);
+      margin-inline: auto;
+      padding-inline: 1rem;
+    }
+
+    /* ===== HEADER_SIMPLE ===== */
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(8px);
+      background: linear-gradient(180deg, rgba(11,18,38,.85), rgba(11,18,38,.65));
+      border-bottom: 1px solid rgba(148,163,184,.15);
+      z-index: 50;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .9rem 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-weight: 700;
+      letter-spacing: .3px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .brand-badge {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      box-shadow: 0 6px 18px var(--ring);
+    }
+    .menu {
+      display: flex; gap: 1rem; align-items: center;
+    }
+    .menu a {
+      padding: .5rem .8rem;
+      border-radius: 10px;
+      color: var(--muted);
+    }
+    .menu a:hover {
+      background: rgba(148,163,184,.08);
+      color: var(--text);
+    }
+    .cta {
+      border: 1px solid rgba(34,211,238,.35);
+      padding: .55rem .9rem;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(34,211,238,.09), rgba(56,189,248,.08));
+      box-shadow: 0 8px 20px var(--ring);
+      color: var(--text);
+    }
+
+    /* ===== HERO (optionnel court) ===== */
+    .hero {
+      padding: 3.5rem 0 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 2.8vw + 1rem, 3rem);
+      line-height: 1.15;
+      margin: 0 0 .6rem;
+      letter-spacing: .2px;
+    }
+    .hero p {
+      color: var(--muted);
+      margin: 0;
+      max-width: 70ch;
+    }
+
+    /* ===== PLUGGIN TEXT_IMG ===== */
+    .card {
+      margin: 2rem 0 3rem;
+      background: linear-gradient(180deg, rgba(15,23,42,.6), rgba(11,18,38,.8));
+      border: 1px solid rgba(148,163,184,.15);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: clip;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 860px) {
+      .grid { grid-template-columns: 1.1fr .9fr; }
+    }
+    .card-text {
+      padding: clamp(1rem, 2vw + 1rem, 2rem);
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: .85rem;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: .5rem;
+    }
+    .card h2 {
+      margin: .2rem 0 1rem;
+      font-size: clamp(1.3rem, 1.2vw + 1rem, 2rem);
+    }
+    .card p { color: var(--text); opacity: .95; }
+    .muted { color: var(--muted); }
+
+    .media {
+      position: relative;
+      min-height: 220px;
+      background: radial-gradient(600px 300px at 70% 0%, rgba(34,211,238,.15), transparent 60%);
+    }
+    .media figure {
+      margin: 0;
+      height: 100%;
+    }
+    .media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .media figcaption {
+      position: absolute;
+      inset: auto 1rem 1rem 1rem;
+      font-size: .85rem;
+      color: var(--muted);
+      background: rgba(2,6,23,.55);
+      border: 1px solid rgba(148,163,184,.15);
+      border-radius: 10px;
+      padding: .5rem .7rem;
+      backdrop-filter: blur(6px);
+    }
+
+    /* ===== FOOTER_SIMPLE ===== */
+    footer {
+      border-top: 1px solid rgba(148,163,184,.15);
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+    }
+    .footer-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 720px) {
+      .footer-grid {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+      }
+    }
+    .small {
+      font-size: .92rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER_SIMPLE  -->
+  <header aria-label="En-tête principal">
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="Accueil ISEN Ouest">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>ISEN Ouest</span>
+      </a>
+
+      <nav class="menu" aria-label="Navigation principale">
+        <a href="#apprentissage">Apprentissage</a>
+        <a href="#rythme">Rythme</a>
+        <a href="#entreprises">Entreprises</a>
+        <a class="cta" href="#candidater">Candidater</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero" id="apprentissage">
+      <h1>Cycle ingénieur par l’apprentissage</h1>
+      <p>Les trois dernières années de la formation d’ingénieur se réalisent en alternance au sein d’une entreprise d’accueil, avec une montée progressive en compétences.</p>
+    </section>
+
+    <!-- PLUGGIN TEXT_IMG -->
+    <section class="container card" id="rythme" aria-labelledby="titre-apprentissage">
+      <div class="grid">
+        <div class="card-text">
+          <span class="eyebrow">Ingénieur par l’apprentissage</span>
+          <h2 id="titre-apprentissage">Un parcours en alternance, structuré et professionnalisant</h2>
+
+          <p>
+            Le cycle ingénieur correspond aux trois dernières années de la formation d’ingénieur.
+            Sous statut apprenti, ces trois années sont réalisées en apprentissage au sein d’une entreprise d’accueil.
+          </p>
+
+          <p>
+            Tout au long de cette formation, vous alternez les périodes à l’école et les périodes en entreprise,
+            en montant progressivement en compétence. Ces périodes durent environ <strong>6&nbsp;semaines</strong> lors
+            des deux premières années, puis <strong>6&nbsp;mois</strong> la dernière année.
+          </p>
+
+          <p class="muted">
+            Ces rythmes d’alternance permettent aux étudiants de travailler avec des entreprises sur tout le
+            territoire français.
+          </p>
+        </div>
+
+        <aside class="media" aria-labelledby="schema-caption">
+          <figure>
+            <img
+              src="https://isen-ouest.fr/wp-content/uploads/2024/11/08/shema-cycle-inge-12-1320x752.png"
+              alt="Schéma du cycle ingénieur en alternance : alternance école/entreprise sur 3 ans, avec 6 semaines/6 semaines les deux premières années puis 6 mois en dernière année."
+              loading="lazy"
+              width="1320" height="752"
+            />
+            <figcaption id="schema-caption">Schéma du cycle ingénieur en apprentissage (indicatif).</figcaption>
+          </figure>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER_SIMPLE -->
+  <footer role="contentinfo">
+    <div class="container footer-grid">
+      <p class="small">© <span id="year"></span> ISEN Ouest — Tous droits réservés.</p>
+      <p class="small">
+        <a href="#mentions">Mentions légales</a> ·
+        <a href="#accessibilite">Accessibilité</a> ·
+        <a href="#contact">Contact</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Petit confort : année dynamique dans le footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
